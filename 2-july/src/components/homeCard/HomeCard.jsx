@@ -1,9 +1,7 @@
 import React from "react";
-import "../../App.css"
+import "../../App.css";
 
 const HomeCard = ({ col_size }) => {
-
-    console.log(col_size)
   return (
     <div
       className={`flex flex-col px-10 py-4 col-span-${col_size} border-[0.5px] border-gray-600 rounded-lg gap-2 justify-center items-center text-center custom-bg`}
