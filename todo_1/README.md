@@ -1,0 +1,1 @@
+trying to create a simple react app, where we can add task, mark as complete and delete as well
