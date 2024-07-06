@@ -1,8 +1,10 @@
 import "../index.css";
 
-import React from "react";
+import React, { useState } from "react";
 
-function Task({ task, deleteHandler, editHandler }) {
+function Task({ task, deleteHandler, editHandler,editTask }) {
+  const [edit, setEdit] = useState(false);
+  const [input,setInput]=useState("");
   return (
     <div className="task">
       <input
@@ -13,13 +15,24 @@ function Task({ task, deleteHandler, editHandler }) {
         onChange={() => editHandler(task.id)}
       />
       {/* <span>{task.title}</span> */}
-      <input type="text" name="" id="" value={task.title} readOnly={true} className="taskList"/>
+      <input
+        type="text"
+        name=""
+        id=""
+        value={task.title}
+        readOnly={!edit}
+        className="taskList"
+        
+
+      />
       <button
         onClick={() => {
-          editHandler(task.id);
+          setEdit(!edit);
+          editTask(task.id,"edited");
+
         }}
       >
-        Edit
+        {edit ? "Done" : "Edit"}
       </button>
       <button
         onClick={() => {

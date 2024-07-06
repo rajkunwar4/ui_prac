@@ -52,6 +52,17 @@ export default function App() {
     );
   };
 
+  const editTask = (id, newVal) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id == id) {
+          task.title = newVal;
+        }
+        return task;
+      })
+    );
+  };
+
   return (
     <div>
       {/* input bar to add new tasks */}
@@ -71,6 +82,7 @@ export default function App() {
             task={task}
             deleteHandler={deleteHandler}
             editHandler={editHandler}
+            editTask={editTask}
           />
         ))}
       </div>
